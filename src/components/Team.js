@@ -1,25 +1,22 @@
 import React, { useState } from 'react';
-import './teams.module.css';
+import styles from './Team.module.css';
 import teamData from './teamData';
 
 function Team() {
   const [selectedTeam, setSelectedTeam] = useState("Core");
 
-  // Log selected team to debug
-  console.log("Selected Team:", selectedTeam);
-
   return (
-    <div className="team-container">
-      <header className="team-header">
+    <div className={styles['team-container']}>
+      <header className={styles['team-header']}>
         <h1>MEET OUR TEAM</h1>
       </header>
-
-      {/* Navbar for teams */}
-      <nav className="team-nav">
+      <nav className={styles['team-nav']}>
         {Object.keys(teamData).map((team) => (
           <button
             key={team}
-            className={`nav-button ${selectedTeam === team ? 'active' : ''}`}
+            className={`${styles['nav-button']} ${
+              selectedTeam === team ? styles['active'] : ''
+            }`}
             onClick={() => setSelectedTeam(team)}
           >
             {team}
@@ -27,15 +24,20 @@ function Team() {
         ))}
       </nav>
 
-      {/* Display selected team members */}
-      <section className="team-grid">
+      <section className={styles['team-grid']}>
         {teamData[selectedTeam]?.map((member, index) => (
-          <div key={index} className="team-card">
-            <div className="card-inner">
-              <img src={member.img} alt={member.name} className="team-image" />
+          <div key={index} className={styles['team-card']}>
+            <div className={styles['card-inner']}>
+              <img
+                src={member.img}
+                alt={member.name}
+                className={styles['team-image']}
+              />
             </div>
-            <p className="team-name">{member.name}</p>
-            <p className="team-description">{member.description}</p> {/* Show description if available */}
+            <p className={styles['team-name']}>{member.name}</p>
+            <p className={styles['team-description']}>
+              {member.description}
+            </p>
           </div>
         ))}
       </section>
