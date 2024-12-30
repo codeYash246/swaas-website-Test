@@ -27,7 +27,6 @@ function Team() {
         <div className={`${styles['diamond-decoration']} ${styles['diamond-1']}`}></div>
         <div className={`${styles['diamond-decoration']} ${styles['diamond-2']}`}></div>
 
-        {/* Header */}
         <header className={styles['team-header']}>
           <h1>MEET OUR TEAM</h1>
           <div className={styles['wavy-line']}></div>
