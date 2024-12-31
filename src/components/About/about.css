@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+
+.about-container {
+  position: relative;
+  width: 100%;
+  height: 500px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  padding: 0;
+
+}
+
+.heading {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0; 
+}
+
+
+.grid-image {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 600px; 
+  height: auto;
+  z-index: 1; 
+  opacity: 0.5; 
+}
+
+/* Heading Text */
+.heading h1 {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000; 
+  z-index: 2;
+  background: white;
+  border : 1px solid #000;
+  padding: 10px 30px; 
+  border-radius: 30px; 
+  display: inline-block;
+  top: -165px;
+  font-family: 'Inika', serif; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+/* Left Star */
+.star-left {
+  position: absolute;
+  top: -51%;
+  left: 28%;
+  width: 85px;
+  height: auto;
+  z-index: 3;
+  transform: rotate(87deg);
+}
+
+
+
+/* Right Star */
+.star-right {
+  position: absolute;
+  top: -84%;
+  right: 28%;
+  width: 85px;
+  height: auto;
+  z-index: 3;
+  transform: rotate(267deg);
+}
+
+
+
+.leaf-right-top {
+  position: absolute;
+  top: 10%; 
+  width: 120px; 
+  height: auto;
+  z-index: 1;
+  transform: rotate(-14.85deg); }
+
+.leaf-left-circle {
+  position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-7%) rotatey(167deg);
+    width: 150px;
+    height: auto;
+    z-index: 2;
+}
+
+.design-left {
+  position: absolute;
+  bottom: -20px;
+  left: -214px;
+  Width: 334.04px;
+  Height: 282.14px;
+  z-index: 1;
+  transform: translateY(-50%) rotate(-153deg);
+
+}
+
+
+.design-right {
+  position: absolute;
+  bottom: -42px;
+  right: -43px;
+  Width: 333.29px;
+  Height: 282.14px;
+  z-index: 1;
+  transform: rotate(5deg);
+}

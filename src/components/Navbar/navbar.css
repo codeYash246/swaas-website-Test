@@ -1,0 +1,77 @@
+/* Existing navbar styles */
+@import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 10px;
+  color: rgb(0, 0, 0);
+  font-family: 'Inika', serif; 
+}
+
+.navbar-logo img {
+  width: 92px;
+  height: 92px;
+  position: relative;
+  top: 10px;
+  border-radius: 50%;
+  opacity: 100%;
+}
+
+.navbar-links {
+  list-style-type: none;
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+  padding: 0;
+}
+
+.navbar-links li {
+  display: inline;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  padding: 10px 20px;
+  border-radius: 18px;  
+}
+
+.navbar-links a.active {
+  background-color: #B4C79D;
+  color: rgb(0, 0, 0);
+  border-radius: 50px;
+}
+
+
+.navbar-links a:hover {
+  background-color: #B4C79D;
+  border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+.navbar-line {
+  width: 100%;
+  height: 1.5px;
+  background-color: #000000;
+  margin-top: -3px;
+  opacity: 50%;
+}
+
+@media (max-width: 768px) {
+  .navbar-line {
+    background-color: #ccc;
+  }
+}
