@@ -7,7 +7,7 @@ import img5 from '../components/Elements/image 5.png';
 import img1 from '../components/Elements/img1.png';
 
 const Team = () => {
-  const [selectedTeam, setSelectedTeam] = useState("Core");
+  const [selectedTeam, setSelectedTeam] = useState("Core"); 
 
   return (
     <div className={styles.pageBackground}>
@@ -37,7 +37,7 @@ const Team = () => {
               className={`${styles.categoryButton} ${
                 selectedTeam === team ? styles.active : ''
               }`}
-              onClick={() => setSelectedTeam(team)}
+              onClick={() => setSelectedTeam(team)} 
             >
               {team}
             </button>
