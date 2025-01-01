@@ -56,10 +56,12 @@ const Team = () => {
                   src={member.img}
                   alt={member.name}
                   className={styles.teamImage}
-                />
-                <p className={styles.memberName}>{member.name}</p>
-                <p className={styles.memberDescription}>{member.description}</p>
+
+                /><p className={styles.memberName}>{member.name}</p>
+                {/* <p className={styles.memberName}>{member.name}</p>
+                <p className={styles.memberDescription}>{member.description}</p> */}
               </div>
+              
             </div>
           ))}
         </section>
