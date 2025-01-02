@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
+import Team from '../Team';
 
 function Navbar() {
   const location = useLocation();
@@ -31,7 +32,7 @@ function Navbar() {
             </Link>
           </li>
           <li>
-            <Link to="/team" className={location.pathname === '/team' ? 'active' : ''}>
+            <Link to="/Team" className={location.pathname === '/Team' ? 'active' : ''}>
               Team
             </Link>
           </li>
