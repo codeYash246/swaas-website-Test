@@ -31,7 +31,7 @@ const teamData = {
       { name: "Neeraj Gandhi", img:N, description: "Meet Neeraj, our talented Content Lead, who masterfully crafts the voice of our organization. By creating compelling, mission-driven content, Neeraj inspires and engages our audience. A collaborative and dynamic team player, he fosters a culture of creativity, positivity, and growth, elevating our message and impact." },
     ],
     Outreach: [
-      { name: "Prableen Singh", img: PS, description: "Prableen also leads outreach initiatives, establishing partnerships and ensuring the project reaches new audiences." },
+      { name: "Prableen Singh", img: PS1, description: "Prableen also leads outreach initiatives, establishing partnerships and ensuring the project reaches new audiences." },
     ],
 };
 

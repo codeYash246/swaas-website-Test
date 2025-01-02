@@ -8,6 +8,15 @@ import img1 from '../components/Elements/img1.png';
 
 const Team = () => {
   const [selectedTeam, setSelectedTeam] = useState("Core"); 
+  const [selectedMember, setSelectedMember] = useState(null); 
+
+  const handleMemberClick = (member) => {
+    setSelectedMember(member); 
+  };
+
+  const closePopup = () => {
+    setSelectedMember(null); 
+  };
 
   return (
     <div className={styles.pageBackground}>
@@ -25,7 +34,9 @@ const Team = () => {
 
         <div className={`${styles.diamondDecoration} ${styles.diamond1}`}></div>
         <div className={`${styles.diamondDecoration} ${styles.diamond2}`}></div>
-
+        <div className={`${styles.diamondDecoration} ${styles.diamond3}`}></div>
+        <div className={`${styles.diamondDecoration} ${styles.diamond4}`}></div>
+        
         <header className={styles.teamHeader}>
           <h1>MEET OUR TEAM</h1>
         </header>
@@ -56,12 +67,16 @@ const Team = () => {
                   src={member.img}
                   alt={member.name}
                   className={styles.teamImage}
-
-                /><p className={styles.memberName}>{member.name}</p>
-                {/* <p className={styles.memberName}>{member.name}</p>
-                <p className={styles.memberDescription}>{member.description}</p> */}
+                  onClick={() => handleMemberClick(member)} 
+                />
+                
+                <p 
+                  className={styles.memberName} 
+                  onClick={() => handleMemberClick(member)}
+                >
+                  {member.name}
+                </p>
               </div>
-              
             </div>
           ))}
         </section>
@@ -77,6 +92,15 @@ const Team = () => {
         alt="Bottom Right Decoration" 
         className={styles.bottomRightImage} 
       />
+      {selectedMember && (
+        <div className={styles.popupOverlay} onClick={closePopup}>
+          <div className={styles.popupContent} onClick={(e) => e.stopPropagation()}>
+            <h2>{selectedMember.name}</h2>
+            <p>{selectedMember.description}</p>
+            <button className={styles.closeButton} onClick={closePopup}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

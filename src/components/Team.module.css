@@ -28,9 +28,23 @@
 }
 
 .leafDecoration {
-  position: absolute;
+  position: relative;
   z-index: -1;
 }
+
+
+@keyframes moveAndRotateLeaves {
+  0% {
+    transform: rotate(2deg) translateX(0) translateY(0); 
+  }
+  50% {
+    transform: rotate(5deg) translateX(10px) translateY(-20px);
+  }
+  100% {
+    transform: rotate(2deg) translateX(0) translateY(0); 
+  }
+}
+
 
 .leafTopRight {
   position: fixed;
@@ -38,54 +52,111 @@
   right: -0.2%;
   width: 160px;
   height: auto;
-  transform: rotate(2deg);
   opacity: 1;
   z-index: -1;
+  animation: moveAndRotateLeaves 5s ease-in-out infinite; 
 }
-
 .leafBottomLeft {
   position: fixed;
   top: 290px;
   left: 0;
   width: 160px;
   height: auto;
+  transform-origin: 50% 50%; 
   transform: rotate(100deg);
   opacity: 1;
   z-index: -1;
+  animation: moveAndRotateLeaves2 5s ease-in-out infinite;
 }
+
+
+@keyframes moveAndRotateLeaves2 {
+  0% {
+    transform: rotate(100deg) translateX(0) translateY(0);
+  }
+  50% {
+    transform: rotate(105deg) translateX(5px) translateY(-10px); 
+  }
+  100% {
+    transform: rotate(100deg) translateX(0) translateY(0);
+  }
+}
+
+
+
 
 .diamondDecoration {
   position: absolute;
-  width: 15px;
-  height: 15px;
-  border: 2px solid #718C6B;
-  transform: rotate(45deg);
-  opacity: 0.6;
+  background-color: #7BAE7F; 
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); 
+  transform: rotate(0deg); 
+  opacity: 0.8; 
+  z-index: 1; 
+  border: none; 
 }
 
+
 .diamond1 {
-  top: 100px;
-  left: 50px;
+  width: 25px;
+  height: 25px;
+  top: 240px;
+  left: 390px;
 }
 
 .diamond2 {
-  top: 100px;
-  right: 50px;
+  width: 15px;
+  height: 15px;
+  top: 130px;
+  right: 383px;
+}
+.diamond3 {
+  width: 15px;
+  height: 15px;
+  top: 249px;
+  left: 416px;
+}
+
+.diamond4 {
+  width: 25px;
+  height: 25px;
+  top: 120px;
+  right: 400px;
 }
 
 .teamHeader {
   text-align: center;
   margin: 5rem 0;
   position: relative;
-}
+  font-family: "Inika", serif;
 
+}
+.teamHeader::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 115%;
+  height: 115%;
+  max-width: 600px; 
+  max-height: 300px;
+  background-image: 
+    linear-gradient(#00000020 1px, transparent 1px),
+    linear-gradient(90deg, #00000020 1px, transparent 1px);
+  background-size: 15px 15px; 
+  z-index: -1; 
+  opacity: 0.9; 
+  pointer-events: none;
+}
 .teamHeader h1 {
   font-size: 2.5rem;
+  font-family: "Inika", serif;
   font-weight: bold;
   display: inline-block;
   padding: 1rem 3rem;
-  border: 2px solid #000;
-  border-radius: 30px;
+  border: 1px solid #000;
+  border-radius: 40px;
+  font-family: "Inika", serif;
   position: relative;
   background-color: #fff;
 }
@@ -102,7 +173,8 @@
   padding: 0.5rem 1.5rem;
   background: none;
   border: none;
-  font-family: sans-serif;
+  font-family: "Inika", serif;
+  font-weight:400;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -110,6 +182,7 @@
 .active {
   background-color: #CBD5C0;
   border-radius: 20px;
+
 }
 
 .wavyLine {
@@ -132,6 +205,7 @@
 .teamCardContainer {
   position: relative;
   width: 100%;
+
   max-width: 250px;
   margin: 0 auto;
 }
@@ -176,11 +250,11 @@
 .memberName {
   background-color: #84aa80;
   padding: 0.75rem;
+  font-family: "Inika", serif;
   text-align: center;
   border-radius: 9px;
   margin-bottom: 0.5rem;
-  font-family: sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   width: 100%;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -191,8 +265,8 @@
   padding: 0.5rem;
   text-align: center;
   border-radius: 20px;
-  font-family: sans-serif;
   font-size: 0.9rem;
+  font-family: "Inika", serif;
   opacity: 0.9;
   margin-top: 0.5rem;
   max-width: 90%;
@@ -254,4 +328,61 @@
   .memberDescription {
     font-size: 0.8rem;
   }
+}
+
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+
+.popupContent {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.popupContent h2 {
+  font-size: 1.5rem;
+  font-family: "Inika", serif;
+  margin-bottom: 1rem;
+}
+
+
+.popupContent p {
+  font-family: "Inika", serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+
+.closeButton {
+  background-color: #84aa80;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.teamImage:hover, .memberName:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
