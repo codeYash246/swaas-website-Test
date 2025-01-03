@@ -1,22 +1,13 @@
 import React, { useState } from 'react';
-import styles from './Team.module.css';
+import styles from './Team.module.css'; // Correctly importing CSS module
 import teamData from '../components/teamData';
-import img14 from '../components/Elements/image 14.png';  
-import img10 from '../components/Elements/image 10.png';  
+import img14 from '../components/Elements/image 14.png';
+import img10 from '../components/Elements/image 10.png';
 import img5 from '../components/Elements/image 5.png';
 import img1 from '../components/Elements/img1.png';
 
 const Team = () => {
-  const [selectedTeam, setSelectedTeam] = useState("Core"); 
-  const [selectedMember, setSelectedMember] = useState(null); 
-
-  const handleMemberClick = (member) => {
-    setSelectedMember(member); 
-  };
-
-  const closePopup = () => {
-    setSelectedMember(null); 
-  };
+  const [selectedTeam, setSelectedTeam] = useState("Core");
 
   return (
     <div className={styles.pageBackground}>
@@ -36,7 +27,7 @@ const Team = () => {
         <div className={`${styles.diamondDecoration} ${styles.diamond2}`}></div>
         <div className={`${styles.diamondDecoration} ${styles.diamond3}`}></div>
         <div className={`${styles.diamondDecoration} ${styles.diamond4}`}></div>
-        
+
         <header className={styles.teamHeader}>
           <h1>MEET OUR TEAM</h1>
         </header>
@@ -48,7 +39,7 @@ const Team = () => {
               className={`${styles.categoryButton} ${
                 selectedTeam === team ? styles.active : ''
               }`}
-              onClick={() => setSelectedTeam(team)} 
+              onClick={() => setSelectedTeam(team)}
             >
               {team}
             </button>
@@ -60,47 +51,43 @@ const Team = () => {
 
         <section className={styles.teamGrid}>
           {teamData[selectedTeam]?.map((member, index) => (
-            <div key={`${member.name}-${index}`} className={styles.teamCardContainer}>
+            <div
+              key={`${member.name}-${index}`}
+              className={styles.teamCardContainer}
+            >
               <div className={styles.teamCardBackground}></div>
-              <div className={styles.teamCard}>
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  className={styles.teamImage}
-                  onClick={() => handleMemberClick(member)} 
-                />
-                
-                <p 
-                  className={styles.memberName} 
-                  onClick={() => handleMemberClick(member)}
-                >
-                  {member.name}
-                </p>
+              <div className={styles.flipCard}>
+                <div className={styles.flipCardInner}>
+                  <div className={styles.flipCardFront}>
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className={styles.teamImage}
+                    />
+                  </div>
+                  <div className={styles.flipCardBack}>
+                    <p className={styles.memberDescription}>
+                      {member.description}
+                    </p>
+                  </div>
+                </div>
+                <p className={styles.memberName}>{member.name}</p>
               </div>
             </div>
           ))}
         </section>
       </div>
 
-      <img 
-        src={img14} 
-        alt="Bottom Left Decoration" 
-        className={styles.bottomLeftImage} 
+      <img
+        src={img14}
+        alt="Bottom Left Decoration"
+        className={styles.bottomLeftImage}
       />
-      <img 
-        src={img10} 
-        alt="Bottom Right Decoration" 
-        className={styles.bottomRightImage} 
+      <img
+        src={img10}
+        alt="Bottom Right Decoration"
+        className={styles.bottomRightImage}
       />
-      {selectedMember && (
-        <div className={styles.popupOverlay} onClick={closePopup}>
-          <div className={styles.popupContent} onClick={(e) => e.stopPropagation()}>
-            <h2>{selectedMember.name}</h2>
-            <p>{selectedMember.description}</p>
-            <button className={styles.closeButton} onClick={closePopup}>Close</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

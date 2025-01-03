@@ -1,3 +1,8 @@
+.body{
+  overflow:hidden;
+  margin: 0;
+  height: 100vh;
+}
 .page-background {
   position: fixed;
   top: 0;
@@ -24,14 +29,13 @@
   position: relative;
   min-height: 100vh;
   flex-grow: 1;
-  overflow-y: auto; 
+  
 }
 
 .leafDecoration {
   position: relative;
   z-index: -1;
 }
-
 
 @keyframes moveAndRotateLeaves {
   0% {
@@ -44,7 +48,6 @@
     transform: rotate(2deg) translateX(0) translateY(0); 
   }
 }
-
 
 .leafTopRight {
   position: fixed;
@@ -82,9 +85,6 @@
   }
 }
 
-
-
-
 .diamondDecoration {
   position: absolute;
   background-color: #7BAE7F; 
@@ -94,7 +94,6 @@
   z-index: 1; 
   border: none; 
 }
-
 
 .diamond1 {
   width: 25px;
@@ -182,7 +181,6 @@
 .active {
   background-color: #CBD5C0;
   border-radius: 20px;
-
 }
 
 .wavyLine {
@@ -190,6 +188,7 @@
   width: 100%;
   height: 100%;
   margin: -3rem 0;
+  margin-left: 290px;
   top: 3cap;
   overflow: hidden;
 }
@@ -200,14 +199,15 @@
   gap: 2rem;
   width: 100%;
   padding: 2rem 0;
+  height:fit-content;
 }
 
 .teamCardContainer {
   position: relative;
   width: 100%;
-
   max-width: 250px;
   margin: 0 auto;
+  
 }
 
 .teamCardBackground {
@@ -258,6 +258,8 @@
   width: 100%;
   box-sizing: border-box;
   word-wrap: break-word;
+  margin-block-start: 1rem;
+  
 }
 
 .memberDescription {
@@ -286,10 +288,8 @@
 
 .bottomRightImage {
   position: relative;
-  bottom: -10px; 
-  right: -74.5vh;
-  width: 200px;
-  height: auto;
+  left:1425px;
+
   z-index: -1;
   opacity: 1;
 }
@@ -385,4 +385,145 @@
   transform: scale(1.05);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teamCardContainer {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  height: 400px;
+}
+
+.teamCardBackground {
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  width: 100%;
+  height: 100%;
+  background-color: #73956F;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.flipCard {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  position: relative;
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipCard:hover .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+.flipCardFront, .flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 7px;
+}
+
+.flipCardFront {
+  background-color: #D9D9D9;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.flipCardBack {
+  background-color: #84aa80;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.teamImage {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.memberName {
+  position: absolute; /* Position it relative to its parent */
+  bottom: -100px; /* Adjust this to control the vertical placement */
+  background-color: #B4C79D;
+  padding: 1rem;
+  font-family: "Inika", serif;
+  text-align: center;
+  border-radius: 9px;
+  font-weight: 600;
+  width: 100%;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+.memberDescription {
+  color: white;
+  font-family: "Inika", serif;
+  font-size: 0.80rem;
+  line-height: 1.5;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.teamImage:hover, .memberName:hover {
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .teamCardContainer {
+    height: 300px;
+  }
+
+  .teamImage {
+    height: 150px;
+  }
+
+  .memberName {
+    font-size: 1rem;
+  }
+
+  .memberDescription {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamCardContainer {
+    height: 280px;
+  }
+
+  .teamImage {
+    height: 130px;
+  }
+
+  .memberName {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .memberDescription {
+    font-size: 0.1rem;
+  }
 }
