@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './navbar.css';
-import Team from '../Team';
+import Team from '../Team/Team';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
