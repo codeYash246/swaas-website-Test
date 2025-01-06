@@ -1,11 +1,11 @@
-import VT from "./members/VT.jpg";
-import HK from "./members/HK.jpg";
-import JK from "./members/JK.jpg";
-import PS from "./members/PS.jpg";
-import I from "./members/I.png";
-import N from "./members/N.jpg";
-import PS1 from "./members/PS1.jpg";
-import ML from "./members/ML.jpg";
+import VT from "../members/VT.jpg";
+import HK from "../members/HK.jpg";
+import JK from "../members/JK.jpg";
+import PS from "../members/PS.jpg";
+import I from "../members/I.png";
+import N from "../members/N.jpg";
+import PS1 from "../members/PS1.jpg";
+import ML from "../members/ML.jpg";
 const teamData = {
     Core: [
       

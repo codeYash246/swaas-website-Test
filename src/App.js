@@ -4,7 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import About from './components/About/About';
 import Home from './components/Home/Home'; 
 import Events from './components/Events/Events';
-import Team from './components/Team/Team';
+import Team from './components/Team/Team.jsx';
 import Gallery from './components/Gallery/Gallery';
 import Collabs from './components/Collabs/Collabs';
 
