@@ -4,7 +4,12 @@ import './navbar.css';
 import Team from '../Team';
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <>
@@ -15,7 +20,15 @@ function Navbar() {
             alt="Logo"
           />
         </div>
-        <ul className="navbar-links">
+
+        {/* Hamburger Icon */}
+        <div className="hamburger" onClick={toggleMenu}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+
+        <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
           <li>
             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
               Home
