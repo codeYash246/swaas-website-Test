@@ -8,8 +8,10 @@ const Home = () => {
   return (
     <div className='Home'>
       <div className='home-heading'>
+        <br></br>
       <h1>SWAAS</h1>
       <h2>The Echo tech society of GTBIT</h2>
+      <h2>The Eco tech society of GTBIT</h2>
       </div>
       <div className='image-text-wrapper'>
       <div className='home-image'>

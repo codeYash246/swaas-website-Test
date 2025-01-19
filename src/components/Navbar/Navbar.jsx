@@ -11,9 +11,13 @@ function Navbar() {
     setMenuOpen(!menuOpen);
   };
 
+  const backgroundColor = location.pathname === '/' ? '#8fa976' : 'transparent';
+
+
   return (
     <>
       <nav className="navbar">
+      <nav className="navbar" style={{backgroundColor: backgroundColor}}>
         <div className="navbar-logo">
           <img 
             src="/images/logo-swaas.jpg"
