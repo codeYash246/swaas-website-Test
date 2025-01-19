@@ -16,7 +16,6 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar">
       <nav className="navbar" style={{backgroundColor: backgroundColor}}>
         <div className="navbar-logo">
           <img 
