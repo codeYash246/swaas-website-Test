@@ -3,7 +3,7 @@ import "./gallery.css"; // Import the CSS file
 
 // Import the images directly from the same folder
 import screen from "./screen.png";
-import leaf from "./leaf.png";
+import leaf from "./leaf-wo-bg.png";
 
 const Gallery = () => {
   return (
@@ -13,8 +13,6 @@ const Gallery = () => {
         backgroundImage: `url(${screen})`, // Use the imported background image
       }}
     >
-      {/* Horizontal line */}
-      <hr className="gallery-divider" />
 
       <div>
         {/* Title section */}
