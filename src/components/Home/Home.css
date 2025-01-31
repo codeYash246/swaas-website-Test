@@ -1,20 +1,21 @@
 .Home {
-  margin-top: -10px;
-  background-color:#8fa976;
+  margin-top: -11px;
+  font-family: "Inika", serif;
+  background-color:rgba(119, 139, 99, 1);
     h1 {
       text-align: center;
       font-size: 65px;
       margin-bottom: -20px;
-      color: #73956f;
+      color: #ffffff;
       margin-bottom: -22px;
       margin-top: 10px;
-      color: #1f6018;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
     }
     h2 {
       text-align: center;
       font-size: 30px;
-      text-shadow: 4px 4px 8px #858585;
+      color: #ffffff;
+      /* text-shadow: 4px 4px 8px #858585; */
     }
     .image-text-wrapper {
       display: flex;
@@ -38,10 +39,10 @@
       margin-right: 40px;
       width: 55%;
       padding: 20px;
-      background-color: #d8e5ba;
+      background-color: rgba(198, 225, 158, 1);
       border-radius: 15px;
       font-size: 1.5rem;
-      color: #34495e;
+      color: rgba(59, 88, 55, 1);
       line-height: 1.8;
       text-align: justify;
       box-shadow: 30px 30px 5px rgba(0, 0, 0, 0.1);

@@ -11,7 +11,7 @@ function Navbar() {
     setMenuOpen(!menuOpen);
   };
 
-  const backgroundColor = location.pathname === '/' ? '#8fa976' : 'transparent';
+  const backgroundColor = location.pathname === '/' ? '#778B63' : 'transparent';
 
 
   return (

@@ -57,10 +57,10 @@
 
 /* Add margin below the navbar line for better spacing */
 .navbar-line {
-  width: 100%;
+  width: 95%;
   height: 1.5px;
   background-color: #000000;
-  margin-top: 5px;/* Ensure space between navbar and the line */
+  margin: 5px auto;/* Ensure space between navbar and the line */
   opacity: 50%;
   z-index: 1; /* Keep the line below the navbar */
 }
@@ -102,8 +102,8 @@
   }
 
   .navbar-logo img {
-    width: 80px;
-    height: 80px;
+    width: 129px;
+    height: 110px;
   }
 }
 

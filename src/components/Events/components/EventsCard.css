@@ -1,0 +1,110 @@
+.card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    height: 208px;
+    width: 1250px;
+    margin-top: 80px;
+  }
+  
+  .date-bubble {
+    background-color: #e0e0e0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    color: #4a5a46;
+    width: 151px;
+    height: 105px;
+  }
+
+  .date-bubble-text {
+    font-size: 20px;
+    color: rgba(59, 88, 55, 1);
+    font-family: "Inika", serif;
+  }
+  
+  
+  .content-box {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: "Inika", serif;
+  }
+  
+  .text-content {
+    max-width: 720px;
+    padding-left: 50px;
+    font-family: "Inika", serif;
+
+  }
+  
+  .title {
+    font-size: 50px;
+    margin-bottom: 0px;
+    color: #4a5a46;
+    font-family: "Inika", serif;
+
+  }
+  
+  .description {
+    font-size: 14px;
+    max-height: 125px;
+    color: #333;
+    font-family: "Inika", serif;
+
+  }
+  
+  .see-more {
+    background-color: #b0c4a5;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 141px;
+    height: 34px;
+    font-family: "Inika", serif;
+
+  }
+  
+  .icon {
+    margin-left: 5px;
+  }
+
+  .image-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image-background {
+    width: 272px;
+    height: 192px;
+    background-color: #5f6d58;
+    border-radius: 70px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 0;
+  }
+  
+  .image {
+    width: 263px;
+    height: 182px;
+    border-radius: 60px;
+    background-color: #d4d4d4;
+    position: relative;
+    z-index: 1;
+  }
+  
+  
