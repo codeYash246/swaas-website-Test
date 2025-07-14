@@ -1,72 +1,29 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import './navbar.css';
-import Team from '../Team/Team';
+import React, { useState } from "react";
+import "./Navbar.css";
 
-function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const backgroundColor = location.pathname === '/' ? '#778B63' : 'transparent';
-
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <>
-      <nav className="navbar" style={{backgroundColor: backgroundColor}}>
-        <div className="navbar-logo">
-          <img 
-            src="/images/logo-swaas.jpg"
-            alt="Logo"
-          />
-        </div>
-
-        {/* Hamburger Icon */}
-        <div className="hamburger" onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
-        </div>
-
-        <ul className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-          <li>
-            <Link to="/" className={location.pathname === '/' ? 'active' : ''}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/events" className={location.pathname === '/events' ? 'active' : ''}>
-              Events
-            </Link>
-          </li>
-          <li>
-            <Link to="/Team" className={location.pathname === '/Team' ? 'active' : ''}>
-              Team
-            </Link>
-          </li>
-          <li>
-            <Link to="/gallery" className={location.pathname === '/gallery' ? 'active' : ''}>
-              Gallery
-            </Link>
-          </li>
-          <li>
-            <Link to="/collabs" className={location.pathname === '/collabs' ? 'active' : ''}>
-              Collabs
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <div className="navbar-line"></div>
-    </>
+    <nav className="navbar">
+      <div className="logo">SWAAS</div>
+      <div className={`nav-links ${isOpen ? "active" : ""}`}>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#team">Team</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#collabs">Collabs</a>
+      </div>
+      <div className="hamburger" onClick={toggleMenu}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
   );
-}
+};
 
 export default Navbar;

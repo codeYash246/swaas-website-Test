@@ -65,90 +65,84 @@
   z-index: 1; /* Keep the line below the navbar */
 }
 
-/* Hamburger Menu for Mobile */
-@media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    background-color: white;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    padding: 20px;
-    border-radius: 10px;
-    z-index: 99; /* Ensure navbar links are above other content */
-  }
-
-  .navbar-links.open {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 24px;
-    width: 30px;
-    cursor: pointer;
-  }
-
-  .hamburger .bar {
-    width: 100%;
-    height: 4px;
-    background-color: #000;
-    border-radius: 5px;
-  }
-
-  .navbar-logo img {
-    width: 129px;
-    height: 110px;
-  }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (min-width: 769px) {
-  .navbar-links {
-    display: flex;
-  }
-
-  .hamburger {
-    display: none;
-  }
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  background-color: #0f0f0f;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  position: relative;
+  z-index: 10;
 }
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
+  gap: 4px;
   cursor: pointer;
-  gap: 5px;
-  margin-right: 20px;
 }
 
-.bar {
+.hamburger span {
   width: 25px;
   height: 3px;
-  background-color: black;
+  background: white;
+  border-radius: 2px;
 }
 
-/* Mobile screen ke liye */
+/* Responsive */
 @media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    background-color: white;
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
+    background-color: #111;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.8rem 0;
+    font-size: 1.2rem;
+    width: 100%;
     text-align: center;
-    z-index: 99;
-  }
-
-  .navbar-links.open {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
+    border-top: 1px solid #333;
   }
 }
+
