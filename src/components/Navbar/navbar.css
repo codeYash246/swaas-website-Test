@@ -145,4 +145,34 @@
     border-top: 1px solid #333;
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background-color: #yourColor;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  nav {
+    overflow-x: hidden;
+  }
+
+  .navbar-container {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+}
 
